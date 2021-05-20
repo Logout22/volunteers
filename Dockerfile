@@ -29,3 +29,5 @@ RUN . venv/bin/activate && \
     ./manage.py migrate && \
     ./manage.py collectstatic && \
     ./manage.py createsuperuser --noinput --username test --email me@fosdem.org
+
+COPY run-tests.sh ./
