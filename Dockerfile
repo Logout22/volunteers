@@ -15,8 +15,7 @@ COPY volunteers volunteers
 RUN python -m venv venv
 
 RUN . venv/bin/activate && \
-    pip install -r requirements-frozen.txt && \
-    pip install gunicorn
+    pip install -r requirements-frozen.txt
 
 RUN sed "\
         s/backends.postgresql_psycopg2/backends.sqlite3/; \
@@ -30,4 +29,6 @@ RUN . venv/bin/activate && \
     ./manage.py collectstatic && \
     ./manage.py createsuperuser --noinput --username test --email me@fosdem.org
 
-COPY run-tests.sh ./
+COPY entrypoint.sh run-tests.sh ./
+
+ENTRYPOINT ["/entrypoint.sh"]

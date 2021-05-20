@@ -9,5 +9,14 @@ if [ $UID != 0 ]; then
 fi
 
 docker build --pull -t volunteers-test .
-docker run -v "$PWD:$PWD" --rm --name volunteers-test -ti volunteers-test "$@"
+ADDITIONAL_ARGS=
+EXEC_ARGS=
+if [ $# -gt 0 ]; then
+    ADDITIONAL_ARGS="--entrypoint $1"
+    shift
+    if [ $# -gt 0 ]; then
+        EXEC_ARGS="$*"
+    fi
+fi
+docker run -v "$PWD:$PWD" --rm --name volunteers-test -ti $ADDITIONAL_ARGS volunteers-test $EXEC_ARGS
 
