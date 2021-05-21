@@ -5,4 +5,6 @@ set -o pipefail
 
 cd /
 ./run-tests.sh
+cd "$GITHUB_WORKSPACE"
+cp /.coverage ./
 
