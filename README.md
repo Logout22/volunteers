@@ -2,6 +2,7 @@ fosdem-volunteers
 =================
 
 ![build](https://github.com/Logout22/volunteers/actions/workflows/main.yml/badge.svg)
+![codecov](https://codecov.io/gh/Logout22/volunteers/graph/badge.svg)
 
 Volunteers management system for conferences, originally written for FOSDEM.
 
