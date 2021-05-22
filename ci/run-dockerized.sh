@@ -55,7 +55,7 @@ if [[ $AS_ROOT = true && $UID -ne 0 ]]; then
 fi
 
 ##### Build container #####
-docker build --pull -t volunteers-test .
+docker build --pull -f ci/Dockerfile -t volunteers-test .
 
 ##### Run container #####
 ADDITIONAL_ARGS=

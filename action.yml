@@ -2,5 +2,5 @@ name: 'Test'
 description: 'Linting and Testing'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'ci/Dockerfile'
 

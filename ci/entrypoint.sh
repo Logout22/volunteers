@@ -7,7 +7,7 @@ mkdir -p logs tool/media/mugshots
 sqlite3 volunteers.db
 sqlite3 penta.db
 python3 -m venv venv
-./install-dependencies.sh
-./setup-server.sh
+ci/install-dependencies.sh
+ci/setup-server.sh
 ./run-tests.sh
 
