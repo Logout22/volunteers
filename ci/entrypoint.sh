@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 set -o errexit
 set -o nounset
-set -o pipefail
 
 mkdir -p logs tool/media/mugshots
 sqlite3 volunteers.db

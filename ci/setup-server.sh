@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 set -o errexit
 set -o nounset
-set -o pipefail
 
 sed "\
         s/backends.postgresql_psycopg2/backends.sqlite3/; \
