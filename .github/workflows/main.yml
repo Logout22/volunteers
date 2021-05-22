@@ -3,6 +3,9 @@ on: [push]
 jobs:
   test_job:
     runs-on: ubuntu-latest
+    env:
+      OS: ubuntu-latest
+      PYTHON: '3.7'
     name: Linting and Testing
     steps:
       - name: Checkout
@@ -15,6 +18,7 @@ jobs:
         with:
           files: ./.coverage
           flags: unittests
+          env_vars: OS,PYTHON
           name: codecov-umbrella
           fail_ci_if_error: true
           path_to_write_report: ./coverage/codecov_report.txt
