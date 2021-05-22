@@ -8,5 +8,6 @@ sqlite3 penta.db
 python3 -m venv venv
 ci/install-dependencies.sh
 ci/setup-server.sh
+./run-linter.sh
 ./run-tests.sh
 
