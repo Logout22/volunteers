@@ -2,12 +2,10 @@
 set -o errexit
 set -o nounset
 
-mkdir -p logs tool/media/mugshots
-sqlite3 volunteers.db
-sqlite3 penta.db
-python3 -m venv venv
-ci/install-dependencies.sh
-ci/setup-server.sh
-./run-linter.sh
-./run-tests.sh
+utils/create-venv.sh
+utils/install-dependencies.sh
+utils/setup-file-system.sh
+utils/setup-server.sh
+utils/run-linter.sh
+utils/run-tests.sh
 
