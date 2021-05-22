@@ -14,9 +14,7 @@ EXEC_ARGS=
 if [ $# -gt 0 ]; then
     ADDITIONAL_ARGS="--entrypoint $1"
     shift
-    if [ $# -gt 0 ]; then
-        EXEC_ARGS="$*"
-    fi
+    EXEC_ARGS="$*"
 fi
-docker run -v "$PWD:$PWD" --rm --name volunteers-test -ti $ADDITIONAL_ARGS volunteers-test $EXEC_ARGS
+docker run -v "$PWD:$PWD" --rm --name volunteers-test --workdir "$PWD" -ti $ADDITIONAL_ARGS volunteers-test $EXEC_ARGS
 

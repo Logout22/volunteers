@@ -1,0 +1,8 @@
+#!/bin/bash
+set -o errexit
+set -o nounset
+set -o pipefail
+
+. venv/bin/activate
+pip install -r requirements-frozen.txt
+
